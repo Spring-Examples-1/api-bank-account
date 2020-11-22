@@ -1,0 +1,40 @@
+2020-11-22 21:09:18,344 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.0.21.Final
+2020-11-22 21:09:18,589 INFO o.s.b.StartupInfoLogger [main] Starting ApiBankAccountApplication on Rached-PC with PID 1132 (D:\AAA_FORMATION_202007\eclipse-java-2020-03-R-win32-x86_64\workspace-spring\gitrepo\api-bank-account\target\classes started by Rached in D:\AAA_FORMATION_202007\eclipse-java-2020-03-R-win32-x86_64\workspace-spring\gitrepo\api-bank-account)
+2020-11-22 21:09:18,600 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-11-22 21:09:20,423 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-22 21:09:20,567 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 123ms. Found 3 JPA repository interfaces.
+2020-11-22 21:09:22,165 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 9080 (http)
+2020-11-22 21:09:22,185 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9080"]
+2020-11-22 21:09:22,187 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2020-11-22 21:09:22,187 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-11-22 21:09:22,341 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-11-22 21:09:22,342 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3539 ms
+2020-11-22 21:09:22,440 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2020-11-22 21:09:22,809 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-11-22 21:09:22,827 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-11-22 21:09:23,140 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-22 21:09:23,238 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.22.Final
+2020-11-22 21:09:23,463 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-22 21:09:23,673 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-11-22 21:09:24,745 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-22 21:09:24,754 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 21:09:26,493 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-22 21:09:27,071 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-22 21:09:27,912 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9080"]
+2020-11-22 21:09:27,951 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 9080 (http) with context path '/mybank'
+2020-11-22 21:09:27,954 INFO o.s.b.StartupInfoLogger [main] Started ApiBankAccountApplication in 10.909 seconds (JVM running for 15.165)
+2020-11-22 21:12:56,347 INFO o.a.j.l.DirectJDKLog [http-nio-9080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-22 21:12:56,348 INFO o.s.w.s.FrameworkServlet [http-nio-9080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-22 21:12:56,375 INFO o.s.w.s.FrameworkServlet [http-nio-9080-exec-1] Completed initialization in 27 ms
+2020-11-22 21:13:18,232 INFO c.b.a.a.LoggingAspect [http-nio-9080-exec-7] Enter: com.bank.account.controller.OperationController.getAllOperationsHistory() with argument[s] = [userUnknown, 999, 0, 10, date, null]
+2020-11-22 21:13:18,252 INFO c.b.a.a.LoggingAspect [http-nio-9080-exec-7] Enter: com.bank.account.service.OperationServiceImpl.getAllOperationsHistory() with argument[s] = [userUnknown, 999, 0, 10, com.bank.account.controller.common.CustomizedSortCriteriaImpl@7460f23b, com.bank.account.controller.common.CustomizedSearchCriteriaImpl@1fe42202]
+2020-11-22 21:13:18,316 INFO c.b.a.a.LoggingAspect [http-nio-9080-exec-7] Enter: com.bank.account.service.core.CommonServiceImpl.checksBeforeAllOperation() with argument[s] = [userUnknown, 999]
+2020-11-22 21:13:18,343 INFO c.b.a.a.LoggingAspect [http-nio-9080-exec-7] Enter: com.bank.account.service.ClientServiceImpl.checkIsValidClient() with argument[s] = [userUnknown, com.bank.account.util.ApiErrors@641de3ed]
+2020-11-22 21:13:18,944 INFO c.b.a.a.LoggingAspect [http-nio-9080-exec-7] Exit: com.bank.account.service.ClientServiceImpl.checkIsValidClient() with result = null
+2020-11-22 21:13:18,946 INFO c.b.a.a.LoggingAspect [http-nio-9080-exec-7] Enter: com.bank.account.service.AccountServiceImpl.checkIsValidAccount() with argument[s] = [999, com.bank.account.util.ApiErrors@641de3ed]
+2020-11-22 21:13:18,973 INFO c.b.a.a.LoggingAspect [http-nio-9080-exec-7] Exit: com.bank.account.service.AccountServiceImpl.checkIsValidAccount() with result = null
+2020-11-22 21:13:18,978 ERROR c.b.a.a.LoggingAspect [http-nio-9080-exec-7] Exception in com.bank.account.service.core.CommonServiceImpl.checksBeforeAllOperation() with cause = NULL
+2020-11-22 21:13:18,980 ERROR c.b.a.a.LoggingAspect [http-nio-9080-exec-7] Exception in com.bank.account.service.OperationServiceImpl.getAllOperationsHistory() with cause = NULL
+2020-11-22 21:13:18,981 ERROR c.b.a.a.LoggingAspect [http-nio-9080-exec-7] Exception in com.bank.account.controller.OperationController.getAllOperationsHistory() with cause = NULL
+2020-11-22 21:13:18,986 ERROR c.b.a.c.c.HandlerController [http-nio-9080-exec-7] handleFunctionalException() - FunctionalException: Business management rules are not respected
+2020-11-22 21:13:18,990 ERROR c.b.a.c.c.HandlerController [http-nio-9080-exec-7] Errors(errors=[Error(errorCode=400, errorOrigin=Functional error, errorMessage=1000 - Invalid user name., params=[]), Error(errorCode=400, errorOrigin=Functional error, errorMessage=1001 - Invalid account number., params=[]), Error(errorCode=400, errorOrigin=Functional error, errorMessage=1003 - Invalid user/account number., params=[])])

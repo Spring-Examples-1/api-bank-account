@@ -121,3 +121,20 @@ Or with CURL
  curl -X GET curl -X GET "http://localhost:9080/mybank/v1/operations?page=0&searchBy=operationId%3E0&size=2&sortBy=date"  \
  -H "accept: application/json" -H "accountNumber: 1000" -H "userName: dtrump"
 ```
+
+5. To get the list of functional errors when using invalid account number ***999*** and user name ***userUnknown*** using swagger :
+
++ Go to
+`<link>` : <http://localhost:9080/mybank/swagger-ui/index.html#/API%20for%20a%20bank%20account%20management./getAllOperationsHistoryUsingGET>
+  
++ Click on the button ***Try it out***.
++ Enter in the value ***999*** the ***accountNumber*** input.
++ Enter in the value ***userUnknown*** the ***userName*** input.
++ Click on the button ***Execute*** and see the response.
+
+Or with CURL
+
+```text
+ curl -X GET "http://localhost:9080/mybank/v1/operations?page=0&size=10&sortBy=date" \
+  -H "accept: application/json" -H "accountNumber: 999" -H "userName: userUnknown"
+```
