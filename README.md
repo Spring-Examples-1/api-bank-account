@@ -1,5 +1,5 @@
 
-# api-bank-account :
+# REST API bank account :
 REST API for a bank account management: 
 With this API, you can deposit and withdrawal operations on your bank account by providing the user name and account number in the headers parameters.
 
