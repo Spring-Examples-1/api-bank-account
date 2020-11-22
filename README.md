@@ -11,7 +11,7 @@ Think of your personal bank account experience When in doubt, go for the simples
 - Account statement (date, amount, balance)
 - Statement printing
  
-# User Stories descrition :
+# User Stories description :
 ##### US 1:
 **In order to** save money  
 **As a** bank client  
