@@ -2,7 +2,7 @@ package com.bank.account.ti.controller.common;
 
 import com.bank.account.model.dto.OperationPostRequest;
 
-public class AbstractCommonTiTest {
+public abstract class AbstractCommonTiTest {
 	protected static final String URL_OPERATIONS = "/v1/operations";
 	protected static final String USER_NAME = "dtrump";
 	protected static final Long ACCOUNT_NUMBER = 1000L;

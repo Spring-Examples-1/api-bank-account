@@ -25,7 +25,7 @@ public class Errors {
 	 * The error list
 	 */
 	@JsonProperty(value = "errors")
-	private List<Error> errors;
+	private List<Error> errorsList;
 
 	/**
 	 * A costumer constructor with errorCode, errorOrigin and errorMessage
@@ -39,7 +39,7 @@ public class Errors {
 	 */
 	public Errors(Integer errorCode, String errorOrigin, String errorMessage) {
 		super();
-		this.errors = Collections.singletonList(new Error(errorCode,  errorOrigin, errorMessage));
+		this.errorsList = Collections.singletonList(new Error(errorCode,  errorOrigin, errorMessage));
 	}
 	
 	/**
@@ -53,10 +53,10 @@ public class Errors {
 	 * 		The error message
 	 */
 	public void addError(Integer errorCode, String errorOrigin, String errorMessage) {
-		if (errors == null) {
-			errors = new ArrayList<>();
+		if (errorsList == null) {
+			errorsList = new ArrayList<>();
 		}
-		errors.add(new Error(errorCode, errorOrigin, errorMessage));
+		errorsList.add(new Error(errorCode, errorOrigin, errorMessage));
 	}
 
 	/**
@@ -68,10 +68,10 @@ public class Errors {
 	 * 		The list of parameters for a configured error
 	 */
 	public void addError(Integer errorCode, Object[] params) {
-		if (errors == null) {
-			errors = new ArrayList<>();
+		if (errorsList == null) {
+			errorsList = new ArrayList<>();
 		}
-		errors.add(new Error(errorCode, params));
+		errorsList.add(new Error(errorCode, params));
 	}
 
 	/* (non-Javadoc)
@@ -86,10 +86,10 @@ public class Errors {
 		if (getClass() != obj.getClass())
 			return false;
 		Errors other = (Errors) obj;
-		if (errors == null) {
-			if (other.errors != null)
+		if (errorsList == null) {
+			if (other.errorsList != null)
 				return false;
-		} else if (!CollectionUtils.isEqualCollection(errors, other.errors))
+		} else if (!CollectionUtils.isEqualCollection(errorsList, other.errorsList))
 			return false;
 
 		return true;
@@ -102,7 +102,7 @@ public class Errors {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((errors == null) ? 0 : errors.hashCode());
+		result = prime * result + ((errorsList == null) ? 0 : errorsList.hashCode());
 		return result;
 	}
 	

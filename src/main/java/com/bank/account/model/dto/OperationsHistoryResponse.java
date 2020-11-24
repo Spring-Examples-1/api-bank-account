@@ -39,7 +39,7 @@ public class OperationsHistoryResponse {
 
 	public OperationsHistoryResponse addHistory(Operation op) {
 		if (operations==null) {
-			operations = new ArrayList<OperationResponse>();
+			operations = new ArrayList<>();
 		}
 		operations.add(new OperationResponse(op));
 		return this;

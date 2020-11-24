@@ -19,7 +19,7 @@ public class FunctionalException extends Exception {
      */
     private static final long serialVersionUID = 894798122053539237L;
 
-    private final Errors errors;
+    private final transient Errors errors;
     
     /**
      * Constructs a FunctionalException with functional error code

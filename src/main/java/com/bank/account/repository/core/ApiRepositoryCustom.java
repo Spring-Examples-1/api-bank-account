@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.NoRepositoryBean;
 
 @NoRepositoryBean
-public interface ApiRepositoryCustom<T, ID> extends JpaRepository<T, ID>,  JpaSpecificationExecutor<T>{
+public interface ApiRepositoryCustom<T, I> extends JpaRepository<T, I>,  JpaSpecificationExecutor<T>{
 
 }

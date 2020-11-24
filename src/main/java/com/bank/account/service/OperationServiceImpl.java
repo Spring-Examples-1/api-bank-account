@@ -49,7 +49,7 @@ public class OperationServiceImpl extends AbstractSearchService<Operation> imple
 
 		/*** Specific checks */
 		ApiErrors apiErrors = new ApiErrors();
-		ApiUtils.checkIsAcceptedWithdrawalOperation(account, postRequest.getAmount().doubleValue(), apiErrors);
+		ApiUtils.checkIsAcceptedWithdrawalOperation(account, postRequest.getAmount(), apiErrors);
 		apiErrors.throwExceptions();
 
 		/*** Update account and save a new operation *****/
@@ -73,7 +73,7 @@ public class OperationServiceImpl extends AbstractSearchService<Operation> imple
 		
 		Page<Operation> pageOperations = operationRepository.findAll(toSpecification(customizedSearchCriteria), pageable);
 
-		pageOperations.getContent().forEach(e -> response.addHistory(e));
+		pageOperations.getContent().forEach(response::addHistory);
 		
 		return response;
 	}

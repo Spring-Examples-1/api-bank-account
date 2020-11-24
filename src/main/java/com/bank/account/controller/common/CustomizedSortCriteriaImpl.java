@@ -28,7 +28,7 @@ public class CustomizedSortCriteriaImpl implements CustomizedSortCriteria {
 	
 	public CustomizedSortCriteriaImpl(String fieldName) {
 		super();
-		orders = new ArrayList<Order>(Arrays.asList(new Order(Sort.DEFAULT_DIRECTION, fieldName)));
+		orders = new ArrayList<>(Arrays.asList(new Order(Sort.DEFAULT_DIRECTION, fieldName)));
 	}
 
 	@Override

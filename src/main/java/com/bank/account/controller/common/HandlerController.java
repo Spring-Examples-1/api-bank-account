@@ -2,6 +2,8 @@ package com.bank.account.controller.common;
 
 import java.text.MessageFormat;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -41,7 +43,7 @@ public class HandlerController {
 		log.error("handleFunctionalException() - FunctionalException: {}", ex.getMessage());
 		Errors errors = getFunctionalErrors(ex);
 		log.error(errors);
-		return new ResponseEntity<Errors>(errors, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
 	}
 
 	/**
@@ -70,20 +72,30 @@ public class HandlerController {
 	 */
 	@ExceptionHandler({ Exception.class })
 	@ResponseBody
-	public ResponseEntity<Object> handleServerErrorException(Exception ex) {
+	public ResponseEntity<Object> handleServerErrorException(HttpServletRequest request, Exception ex) {
 		log.error("handleServerErrorException() - MethodArgumentNotValidException: {}", ex.getMessage());
 
-		Errors errorsBody = addTechnicalError(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+		HttpStatus status = getStatus(request);
+		
+		Errors errorsBody = addTechnicalError(ex.getMessage(), status);
 
-		return new ResponseEntity<>(errorsBody, HttpStatus.INTERNAL_SERVER_ERROR);
+		return new ResponseEntity<>(errorsBody, status);
 	}
 
+	private HttpStatus getStatus(HttpServletRequest request) {
+        Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
+        if (statusCode == null) {
+            return HttpStatus.INTERNAL_SERVER_ERROR;
+        }
+        return HttpStatus.valueOf(statusCode);
+    }
+	
 	/**
 	 * @param ex
 	 * @return
 	 */
 	private Errors getFunctionalErrors(final FunctionalException ex) {
-		for (Error error : ex.getErrors().getErrors()) {
+		for (Error error : ex.getErrors().getErrorsList()) {
 			addFunctionalError(error);
 		}
 		return ex.getErrors();
@@ -129,8 +141,7 @@ public class HandlerController {
 	private String formatMessage(Integer errorCode, Object... params) {
 		String messageFormat = environment.getProperty(String.valueOf(errorCode));
 		messageFormat = MessageFormat.format(messageFormat, params);
-		String formatMessage = errorCode + " - " + messageFormat;
-		return formatMessage;
+		return  errorCode + " - " + messageFormat;
 	}
 
 }
