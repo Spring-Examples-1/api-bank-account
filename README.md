@@ -62,7 +62,7 @@ To execute the unit and integration tests :
 
 When the API is running, an embedded Apache Tomcat Server will be running at :  
 
-`<link>` : <http://localhost:9080/mybank/>
+`<link>` : <http://localhost:9080/mybank/v1/operations/>
 
 
 1. To access the swagger documentation, please check :
